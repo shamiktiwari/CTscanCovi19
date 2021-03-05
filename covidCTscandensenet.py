@@ -42,33 +42,6 @@ plt.title('Frequency Histogram of Species')
 plt.figure(figsize=(12, 12))
 plt.show()
 
-def plot_defects(defect_types, rows, cols):
-    fig, ax = plt.subplots(rows, cols, figsize=(12, 12))
-    defect_files = train['File'][train['Disease Type'] == defect_types].values
-    n = 0
-    for i in range(rows):
-        for j in range(cols):
-            image_path = os.path.join(data_dir, defect_files[n])
-            ax[i, j].set_xticks([])
-            ax[i, j].set_yticks([])
-            ax[i, j].imshow(cv2.imread(image_path))
-            n += 1
-
-plot_defects('COVID', 5, 5)
-
-def plot_defects(defect_types, rows, cols):
-    fig, ax = plt.subplots(rows, cols, figsize=(12, 12))
-    defect_files = train['File'][train['Disease Type'] == defect_types].values
-    n = 0
-    for i in range(rows):
-        for j in range(cols):
-            image_path = os.path.join(data_dir, defect_files[n])
-            ax[i, j].set_xticks([])
-            ax[i, j].set_yticks([])
-            ax[i, j].imshow(cv2.imread(image_path))
-            n += 1
-
-plot_defects('non-COVID', 5, 5)
 
 IMAGE_SIZE = 224
 def read_image(filepath):
